@@ -4,7 +4,7 @@ See the wiki for more info.
 
 Current scripts:
 
-- TestRail (alpha 1.8)
+- TestRail (alpha 1.8 / α1.8)
 
 Future scripts
 
