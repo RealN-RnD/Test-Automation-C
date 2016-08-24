@@ -8,7 +8,7 @@ import org.sikuli.script.*;
 
 /**
  *
- * @author eurofins1
+ * @author Phildor92
  */
 public class Main {
 
@@ -16,6 +16,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        final String VERSION = "Netkuli 0.1";
         Screen curScr = new Screen();
         ImagePath.setBundlePath(".\\src\\netkuliTesting\\img");
         
