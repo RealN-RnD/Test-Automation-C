@@ -19,12 +19,7 @@ public class Main {
         Screen curScr = new Screen();
         ImagePath.setBundlePath(".\\src\\netkuliTesting\\img");
         
-        try{
-            curScr.click("1470125507873.png");
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
+        
     }
     
 }
