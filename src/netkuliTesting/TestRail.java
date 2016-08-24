@@ -14,7 +14,7 @@ import org.sikuli.script.*;
 public class TestRail {
     Sikulix ss = new Sikulix();
     
-    String version = "AutomateG1.8";
+    String version = "TestRail alpha 1.8";
     Screen curScr = new Screen(0);
     //popat(curScr)
 
