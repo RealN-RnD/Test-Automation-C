@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package netkuliTesting;
-import java.awt.image.BufferedImage;
 import org.sikuli.script.*;
 
 /**
@@ -14,23 +13,23 @@ import org.sikuli.script.*;
 public class TestRail {
     Sikulix ss = new Sikulix();
     
-    String version = "TestRail alpha 1.8";
+    String version = "TestRail alpha 1.9";//version 1.9-17.08.25-A
     Screen curScr = new Screen(0);
     //popat(curScr)
 
-    String aut = "1.4.0.35549";
+    String aut = "1.14.0.67";
     String winVariable = "";
     String macVariable = "Mac OS X 10.10.5\nMacBook Pro (Retina 13-inch Late 2013)\nModel A1502\n\nBackend 1.14.0.60";  
     
 
     boolean isWindows = ss.popAsk("Are you testing on Windows?", version);
     
-    public void runTestRailScript(){
+    public int runTestRailScript(){
         try{
         curScr.click("1470125507873.png");
         ss.popup("Press OK when you have finished testing", version);
         curScr.click("1470125519799.png");
-        wait(1);
+        curScr.wait("1470046377455.png");
         if (!isWindows){
             curScr.click("1470046377455.png");   
             curScr.paste(macVariable);
@@ -57,20 +56,18 @@ public class TestRail {
         }
 
         curScr.click("1470644657529.png"); //replace with more precise Pattern search
-        wait(1);
+        curScr.wait("1470126608431.png");
         curScr.click("1470126608431.png");
         boolean doWeContinue = ss.popAsk("Another test?", version);
         if (!doWeContinue){
             ss.popup("You're Winner", version);
-            ss.endNormal(1);
+            return 0;
         }
         }
         catch(FindFailed e){
                         e.printStackTrace();
                 }
-        catch(InterruptedException e){
-                        e.printStackTrace();
-                }
+        return 1;
     }
     
 }

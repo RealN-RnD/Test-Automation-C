@@ -16,11 +16,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        final String VERSION = "Netkuli 0.1";
+        final String VERSION = "Netkuli 0.1";//version 0.1-17.08.25-A
         Screen curScr = new Screen();
         ImagePath.setBundlePath(".\\src\\netkuliTesting\\img");
         
+        int continueVar = 1;
         
+        TestRail tr1 = new TestRail();
+        while (continueVar == 1){
+            continueVar = tr1.runTestRailScript();
+        }
     }
     
 }
