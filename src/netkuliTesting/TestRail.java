@@ -9,19 +9,23 @@ import org.sikuli.script.*;
 /**
  *
  * @author eurofins1
+ * 
+ * Latest changes
+ * - to-dos
+ * - adjusted wait()... again
  */
 public class TestRail {
     Sikulix ss = new Sikulix();
     
-    String version = "TestRail alpha 1.9";//version 1.9-17.08.25-A
+    String version = "TestRail alpha 1.10";//version 1.10-17.08.25-B
     Screen curScr = new Screen(0);
     //popat(curScr)
 
-    String aut = "1.14.0.67";
-    String winVariable = "";
-    String macVariable = "Mac OS X 10.10.5\nMacBook Pro (Retina 13-inch Late 2013)\nModel A1502\n\nBackend 1.14.0.60";  
+    String aut = "1.14.0.75";
+    String winVariable = "CoCo Setup";
+    String macVariable = "Mac OS X 10.10.5\nMacBook Pro (Retina 13-inch Late 2013)\nModel A1502";  
     
-
+    //TODO: add variable input and then display the variables
     boolean isWindows = ss.popAsk("Are you testing on Windows?", version);
     
     public int runTestRailScript(){
@@ -29,6 +33,7 @@ public class TestRail {
         curScr.click("1470125507873.png");
         ss.popup("Press OK when you have finished testing", version);
         curScr.click("1470125519799.png");
+        curScr.wait(1.0);
         curScr.wait("1470046377455.png");
         if (!isWindows){
             curScr.click("1470046377455.png");   
@@ -56,6 +61,7 @@ public class TestRail {
         }
 
         curScr.click("1470644657529.png"); //replace with more precise Pattern search
+        curScr.wait(1.0);
         curScr.wait("1470126608431.png");
         curScr.click("1470126608431.png");
         boolean doWeContinue = ss.popAsk("Another test?", version);
@@ -66,6 +72,7 @@ public class TestRail {
         }
         catch(FindFailed e){
                         e.printStackTrace();
+                        return 0;
                 }
         return 1;
     }

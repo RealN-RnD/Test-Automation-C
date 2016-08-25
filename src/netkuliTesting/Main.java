@@ -21,7 +21,7 @@ public class Main {
         ImagePath.setBundlePath(".\\src\\netkuliTesting\\img");
         
         int continueVar = 1;
-        
+               
         TestRail tr1 = new TestRail();
         while (continueVar == 1){
             continueVar = tr1.runTestRailScript();
