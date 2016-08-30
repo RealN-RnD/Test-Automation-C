@@ -169,7 +169,7 @@ public class NetkulixGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(NetkulixGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        final String VERSION = "Netkuli 0.1";//version 0.1-17.08.25-A
+        final String VERSION = "NetkuliGUI 0.2";//version 0.2-16.08.30-A
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

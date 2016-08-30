@@ -11,7 +11,7 @@ import org.sikuli.script.*;
  * @author Phildor92 <phillip.evans09@hotmail.com>
  */
 public class Sanity {
-    String version = "Sanity 0.1"; //version 0.1-17.08.24-A
+    String version = "Sanity 0.1"; //version 0.1-16.08.30-A
     
     public void SanityRunWithChecks(){
         //TODO: Copy Sikulix script for Sanity run and img.

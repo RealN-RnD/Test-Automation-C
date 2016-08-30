@@ -17,13 +17,13 @@ import org.sikuli.script.*;
 public class TestRail {
     Sikulix ss = new Sikulix();
     
-    String version = "TestRail alpha 1.10";//version 1.10-17.08.25-B
+    String version = "TestRail alpha 1.11";//version 1.11-16.08.30-A
     Screen curScr = new Screen(0);
     //popat(curScr)
 
     String aut = "1.14.0.75";
     String winVariable = "CoCo Setup";
-    String macVariable = "Mac OS X 10.10.5\nMacBook Pro (Retina 13-inch Late 2013)\nModel A1502";  
+    String macVariable = "Mac OS X 10.10\nMacBook (Mid 2009)\nModel A1304";  
     
     //TODO: add variable input and then display the variables
     boolean isWindows = ss.popAsk("Are you testing on Windows?", version);
