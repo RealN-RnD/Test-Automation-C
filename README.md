@@ -4,7 +4,8 @@ See the wiki for more info.
 
 Current scripts:
 
-- TestRail (alpha 1.10 / α1.10)
+- TestRail (alpha 1.11 / α1.11)
+- Install Script (alpha 0.1)
 
 Future scripts
 
