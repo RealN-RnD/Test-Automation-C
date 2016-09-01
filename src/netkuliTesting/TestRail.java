@@ -54,7 +54,7 @@ public class TestRail {
         }
         boolean answer = ss.popAsk("Did the test pass?", version);
         if (!answer){
-            String defect = ss.input("Please enter defect code", version);
+            String defect = ss.input("Please enter defect code", "NHC", version);
             curScr.click("1470210216668.png");
             curScr.paste(defect);
             ss.popup("Select test steps that failed and change Status", version);
