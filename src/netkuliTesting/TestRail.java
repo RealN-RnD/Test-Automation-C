@@ -24,34 +24,34 @@ public class TestRail {
     String macVariable = "Mac OS X 10.10.5\nMacBook Pro (Retina 13-inch Late 2013)\nModel A1502\n\nCoCo Setup";  
     
     //TODO: add variable input and then display the variables
-    boolean isWindows = ss.popAsk("Are you testing on Windows?", version);
+    //boolean isWindows = ss.popAsk("Are you testing on Windows?", version);
     
     public int runTestRailScript(){
         try{
-        if (isWindows) ss.popup("These are the variables: " + winVariable);
-        else ss.popup("These are the variables: " + macVariable);
+        //if (isWindows) ss.popup("These are the variables: " + winVariable);
+        //else ss.popup("These are the variables: " + macVariable);
         curScr.click("1470125507873.png");
         ss.popup("Press OK when you have finished testing", version);
         curScr.click("1470125519799.png");
         curScr.wait(1.0);
         curScr.wait("1470046377455.png");
-        if (!isWindows){
+        //if (!isWindows){
             curScr.click("1470046377455.png");   
             curScr.paste(macVariable);
-        } else {
+        //} else {
             curScr.click("1470046377455.png");
             curScr.paste(winVariable);
-        }
+        //}
         curScr.click("1470046406673.png");
         curScr.click("1470223593900.png");
     
         curScr.paste(aut);
         curScr.click("1470046187921.png");
-        if (!isWindows){
+        //if (!isWindows){
             curScr.type("Mac OS X 10.10");
-        } else {
+        //} else {
             curScr.type("Windows 7 64");
-        }
+        //}
         boolean answer = ss.popAsk("Did the test pass?", version);
         if (!answer){
             String defect = ss.input("Please enter defect code", "NHC", version);

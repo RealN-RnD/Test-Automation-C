@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+*/
 package netkuliTesting;
 
 import java.awt.Desktop;
@@ -26,7 +26,8 @@ public class Main {
         Screen curScr = new Screen();
         ImagePath.setBundlePath(".\\src\\netkuliTesting\\img");
         Sikulix sScript = new Sikulix();
-
+        NetkulixFrm.main(args);
+/*
         int continueVar = 1;
 
         boolean isThisTestRail = sScript.popAsk("Is this a test run?", VERSION);
@@ -41,6 +42,7 @@ public class Main {
                 NikoInstallation ni1 = new NikoInstallation();
                 ni1.winInstall();
             }
-        }
+        }*/
     }
 }
+ 

@@ -127,7 +127,9 @@ public class NetkulixFrm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    //TODO: put all popups in this file. Reduce testrailscript to basic sikulix function
+    //TODO: add other test/fix scripts to the form
     private void testBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testBtnActionPerformed
         String aut = autTxt.getText();
         String dut = dutTxt.getText();
