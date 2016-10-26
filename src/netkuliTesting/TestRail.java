@@ -15,7 +15,7 @@ import org.sikuli.script.*;
 public class TestRail {
     Sikulix ss = new Sikulix();
     
-    String version = "TestRail alpha 1.11";//version 1.11-16.09.01-B
+    String version = "TestRail alpha 1.12";//version 1.12-16.10.26-A
     Screen curScr = new Screen(0);
     //popat(curScr)
 
@@ -77,4 +77,47 @@ public class TestRail {
         return 1;
     }
     
+    public int runTestRailScript2(String apptest, String dut, boolean isWin){
+        try{
+        curScr.click("1470125507873.png");
+        ss.popup("Press OK when you have finished testing", version);
+        curScr.click("1470125519799.png");
+        curScr.wait(1.0);
+        curScr.wait("1470046377455.png");    
+        curScr.click("1470046377455.png");
+        curScr.paste(dut);
+        curScr.click("1470046406673.png");
+        curScr.click("1470223593900.png");
+    
+        curScr.paste(apptest);
+        curScr.click("1470046187921.png");
+        if (!isWin){
+            curScr.type("Mac OS X 10.10");
+        } else {
+            curScr.type("Windows 7 64");
+        }
+        boolean answer = ss.popAsk("Did the test pass?", version);
+        if (!answer){
+            String defect = ss.input("Please enter defect code", "NHC", version);
+            curScr.click("1470210216668.png");
+            curScr.paste(defect);
+            ss.popup("Select test steps that failed and change Status", version);
+        }
+
+        curScr.click("1470644657529.png"); //replace with more precise Pattern search
+        curScr.wait(1.0);
+        curScr.wait("1470126608431.png");
+        curScr.click("1470126608431.png");
+        boolean doWeContinue = ss.popAsk("Another test?", version);
+        if (!doWeContinue){
+            ss.popup("You're Winner", version);
+            return 0;
+        }
+        }
+        catch(FindFailed e){
+                        e.printStackTrace();
+                        return 0;
+                }
+        return 1;
+    }
 }

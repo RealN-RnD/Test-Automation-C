@@ -22,7 +22,7 @@ public class Main {
      * @throws org.sikuli.script.FindFailed
      */
     public static void main(String[] args) throws IOException, FindFailed {
-        final String VERSION = "Netkuli 0.2";//version 0.2-16.09.01-A
+        final String VERSION = "Netkuli 0.3";//version 0.3-16.10.26-A
         Screen curScr = new Screen();
         ImagePath.setBundlePath(".\\src\\netkuliTesting\\img");
         Sikulix sScript = new Sikulix();
