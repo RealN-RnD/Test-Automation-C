@@ -22,7 +22,7 @@ public class Main {
      * @throws org.sikuli.script.FindFailed
      */
     public static void main(String[] args) throws IOException, FindFailed {
-        final String VERSION = "Netkuli 0.2";//version 0.2-16.09.01-A
+        final String VERSION = "Netkuli 0.3";//version 0.3-16.09.01-B
         Screen curScr = new Screen();
         ImagePath.setBundlePath(".\\src\\netkuliTesting\\img");
         Sikulix sScript = new Sikulix();
@@ -32,6 +32,7 @@ public class Main {
         boolean isThisTestRail = sScript.popAsk("Is this a test run?", VERSION);
         if (isThisTestRail) {
             TestRail tr1 = new TestRail();
+            tr1.theVariables();
             while (continueVar == 1) {
                 continueVar = tr1.runTestRailScript();
             }
