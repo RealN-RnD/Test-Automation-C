@@ -13,23 +13,25 @@ import org.sikuli.script.*;
  * Latest changes
  */
 public class TestRail {
-    Sikulix ss = new Sikulix();
+    private Sikulix ss = new Sikulix();
     
-    String version = "TestRail alpha 1.11";//version 1.11-16.09.01-B
-    Screen curScr = new Screen(0);
-    //popat(curScr)
+    private String version = "TestRail alpha 1.11";//version 1.11-16.09.01-B
+    private Screen curScr = new Screen(0);
+    //ss.popat(curScr) //Sikulix 1.1.1
 
-    String aut = "1.14.0.94";
-    String winVariable = "CoCo Setup";
-    String macVariable = "Mac OS X 10.10.5\nMacBook Pro (Retina 13-inch Late 2013)\nModel A1502\n\nCoCo Setup";  
+    private String aut = "3.7.0 (534)";
+    private String winVariable = "iPhone 6, iOS 9.3.5\niPad mini, iOS 9.2.1\n\nClaCo";
+    private String macVariable = "Mac OS X 10.10.5\nMacBook Pro (Retina 13-inch Late 2013)\nModel A1502\n\nCoCo Setup";  
+    private boolean isWindows;
     
-    //TODO: add variable input and then display the variables
-    boolean isWindows = ss.popAsk("Are you testing on Windows?", version);
-    
+    //TODO: add variable input
+    public void theVariables(){
+        isWindows = ss.popAsk("Are you testing on Windows?", version);
+        if (isWindows) ss.popup("These are the variables:\n" + winVariable + "\n\n" + aut);
+        else ss.popup("These are the variables: " + macVariable + "\n\n" + aut);
+    }
     public int runTestRailScript(){
         try{
-        if (isWindows) ss.popup("These are the variables: " + winVariable);
-        else ss.popup("These are the variables: " + macVariable);
         curScr.click("1470125507873.png");
         ss.popup("Press OK when you have finished testing", version);
         curScr.click("1470125519799.png");
@@ -54,7 +56,7 @@ public class TestRail {
         }
         boolean answer = ss.popAsk("Did the test pass?", version);
         if (!answer){
-            String defect = ss.input("Please enter defect code", "NHC", version);
+            String defect = ss.input("Please enter defect code", "NHCXXX-###", version);
             curScr.click("1470210216668.png");
             curScr.paste(defect);
             ss.popup("Select test steps that failed and change Status", version);
